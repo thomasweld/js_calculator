@@ -10,10 +10,12 @@
 
       <form id="calcForm">
 
+        <h1>Calculator</h1>
+
         <div class="flexcontainer">
           <input type="text" id="display">
-          <input type="button" value="C" class="keys" onClick="addToScreen('c')">
-          <input type="button" value="<--" class="keys" onClick="backspace()">
+          <input type="button" value="C" class="keys" id="clear" onClick="addToScreen('c')">
+          <input type="button" value="<-" class="keys" id ="backspace" onClick="backspace()">
         </div>
 
         <div class="flexcontainer">
@@ -38,10 +40,10 @@
         </div>
 
         <div class="flexcontainer">
-          <input type="button" value="0" class="keys" onClick="addToScreen('0')">
-          <input type="button" value="/" class="keys" onClick="addToScreen('/')">
           <input type="button" value="." class="keys" onClick="addToScreen('.')">
+          <input type="button" value="0" class="keys" onClick="addToScreen('0')">
           <input type="button" value="=" id="equal" class="keys" class="keys" onClick="solution()">
+          <input type="button" value="/" class="keys" onClick="addToScreen('/')">
         </div>
 
       </form>

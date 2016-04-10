@@ -1,15 +1,36 @@
 
-#calculator {
-  width: 50%;
-  margin: 0 auto;
+h1  {
+  color: slateblue;
+}
+
+#calcForm {
+  width: 90%;
+  max-width: 600px;
+  min-width: 200px;
+  margin: 40px auto;
+  text-align: center;
 }
 
 #display {
-  font-size: 40px;
+  font-size: 36px;
+  width: 75%;
+  text-align: right;
+  padding: 4px;
+  color: slateblue;
+  border: 1px solid slateblue;
+  margin: 0px 2px 0px 0px;
+  outline-color: slateblue;
 }
 
 .keys {
   font-size: 40px;
+  width: 25%;
+  background-color: slateblue;
+  color: white;
+}
+
+#clear, #backspace {
+  width: 12.5%;
 }
 
 .flexcontainer {
