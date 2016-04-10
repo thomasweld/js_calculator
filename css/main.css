@@ -5,7 +5,8 @@ h1  {
 
 #calcForm {
   width: 90%;
-  max-width: 600px;
+  height: 90%;
+  max-width: 1000px;
   min-width: 200px;
   margin: 40px auto;
   text-align: center;
