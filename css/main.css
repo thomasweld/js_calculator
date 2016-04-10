@@ -19,7 +19,7 @@ h1  {
   color: slateblue;
   border: 1px solid slateblue;
   margin: 0px 2px 0px 0px;
-  outline-color: slateblue;
+  outline-color: #5acd6a;
 }
 
 .keys {
@@ -27,10 +27,15 @@ h1  {
   width: 25%;
   background-color: slateblue;
   color: white;
+  outline-color: #5acd6a;
 }
 
-#clear, #backspace {
-  width: 12.5%;
+.keys:hover {
+  background-color: #5acd6a;
+}
+
+#clear {
+  width: 25%;
 }
 
 .flexcontainer {

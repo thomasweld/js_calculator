@@ -15,3 +15,18 @@
 // // and the third number
 //
 // var state = { first: 55, second: 12, operator: '+' }
+
+
+var display = document.querySelector('#display');
+
+function addToDisplay(x){
+  display.value += x;
+
+  if(x === 'C'){
+    display.value = '';
+  }
+}
+
+function solution(){
+  display.value = eval(display.value);
+}
