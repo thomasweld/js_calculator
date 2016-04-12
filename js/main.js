@@ -29,41 +29,64 @@ function processBtn (event) {
   if (type === 'negative') return processNegative(button);
   if (type === 'equal') return processEqual(button);
   if (type === 'clear') return processClear(button);
-
 }
+
+// Function for negative numbers
+function processNegative (button) {
+  if ( calculatorState.negative === null ){
+      display.innerHTML = '-' + display.innerHTML;
+      calculatorState.negative = '-';
+    } else {
+      calculatorState.negative = null;
+      var revertValue = display.innerHTML.slice(1);
+      display.innerHTML = revertValue;
+    }
+}
+  //
+  // if ( calculatorState.negative === null ) {
+  //   display.innerHTML += button.innerHTML;
+  //   calculatorState.negative = button.innerHTML;
+  // } esle if ( calculatorState.opp === null ) {
+  //   display.innerHTML += button.innerHTML;
+  //   calculatorState.opp = button.innerHTML;
+  // }
+
+
 
 // Function for Numbers
 function processNum (button) {
+
   if ( calculatorState.num1 === null ) {
     display.innerHTML += button.innerHTML;
+
   } else if ( calculatorState.num2 === null) {
     display.innerHTML += button.innerHTML;
   }
+
+
 }
 
 // Function for Opperators
 function processOpp (button) {
-  if ( calculatorState.num1 === null ) {
-    display.innerHTML += button.innerHTML;
-  } else if ( calculatorState.opp === null ) {
-    display.innerHTML += button.innerHTML;
-    calculatorState.opp = button.innerHTML;
-  }
-}
 
-// Function for Opperators
-function processNegative (button) {
   if ( calculatorState.opp === null ) {
     display.innerHTML += button.innerHTML;
     calculatorState.opp = button.innerHTML;
-    console.log('processingnegative');
+  } else {
+    console.log('we\'re not that kind of caluclator');
   }
-}
 
+}
 
 // Function for Equal
 function processEqual (button) {
   display.innerHTML = eval( display.innerHTML );
+  calculatorState = {
+    num1: display.innerHTML,
+    num2: null,
+    opp: null,
+    negative: null
+  };
 }
 
 // Function for Clear
