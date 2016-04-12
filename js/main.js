@@ -1,32 +1,84 @@
 
+// select / find all buttons, store them in variable buttons
+var buttons = document.querySelectorAll('button');
 
-// // create state object to keep track of the state of the screen + calculations
-//
-// var state = { first: null, second: null, operator: null }
-//
-// // When they press the first number it will change to...
-//
-// var state = { first: 55, second: null, operator: null }
-//
-// // When they hit an operator it will change to...
-//
-// var state = { first: 55, second: null, operator: '+' }
-//
-// // and the third number
-//
-// var state = { first: 55, second: 12, operator: '+' }
+// calculatorState variable tracks state of inputs number 1, operator, number 2
+var calculatorState = {
+  num1: null,
+  num2: null,
+  opp: null,
+  negative: null
+};
 
+// add a variable for display on the calculator
+var display = document.querySelector('#answer');
 
-var display = document.querySelector('#display');
+// function to process button clicks
+function processBtn (event) {
 
-function addToDisplay(x){
-  display.value += x;
+  // event.target gives you the button that was clicked
+  // <button data-type="num">7</button>
+  var button = event.target;
 
-  if(x === 'C'){
-    display.value = '';
+  // gives you the data type of each button element
+  var type = button.dataset.type;
+
+  // if statements direct each type of button to execute a specific function
+  if (type === 'num') return processNum(button);
+  if (type === 'opp') return processOpp(button);
+  if (type === 'negative') return processNegative(button);
+  if (type === 'equal') return processEqual(button);
+  if (type === 'clear') return processClear(button);
+
+}
+
+// Function for Numbers
+function processNum (button) {
+  if ( calculatorState.num1 === null ) {
+    display.innerHTML += button.innerHTML;
+  } else if ( calculatorState.num2 === null) {
+    display.innerHTML += button.innerHTML;
   }
 }
 
-function solution(){
-  display.value = eval(display.value);
+// Function for Opperators
+function processOpp (button) {
+  if ( calculatorState.num1 === null ) {
+    display.innerHTML += button.innerHTML;
+  } else if ( calculatorState.opp === null ) {
+    display.innerHTML += button.innerHTML;
+    calculatorState.opp = button.innerHTML;
+  }
+}
+
+// Function for Opperators
+function processNegative (button) {
+  if ( calculatorState.opp === null ) {
+    display.innerHTML += button.innerHTML;
+    calculatorState.opp = button.innerHTML;
+    console.log('processingnegative');
+  }
+}
+
+
+// Function for Equal
+function processEqual (button) {
+  display.innerHTML = eval( display.innerHTML );
+}
+
+// Function for Clear
+function processClear (button) {
+  display.innerHTML = '';
+  calculatorState = {
+    num1: null,
+    num2: null,
+    opp: null,
+    negative: null
+  };
+}
+
+
+// for loop over buttons
+for ( var i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener('click', processBtn);
 }
