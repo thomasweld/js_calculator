@@ -9,48 +9,34 @@
   </head>
   <body>
 
-      <form id="calcForm">
+    <div class="calculator">
+      <div class="answerCont">
+        <span id="answer"></span>
+      </div>
+      <div class="buttons">
 
-        <h1>Calculator</h1>
+        <button data-type="num">7</button>
+        <button data-type="num">8</button>
+        <button data-type="num">9</button>
+        <button data-type="opp">/</button>
 
-        <div class="flexcontainer">
-          <input type="text" id="display">
-          <input type="button" value="C" class="keys" id="clear" onClick="addToDisplay('C')">
-        </div>
+        <button data-type="num">4</button>
+        <button data-type="num">5</button>
+        <button data-type="num">6</button>
+        <button data-type="opp">+</button>
 
-        <div class="flexcontainer">
-          <input type="button" value="9" class="keys" onClick="addToDisplay('9')">
-          <input type="button" value="8" class="keys" onClick="addToDisplay('8')">
-          <input type="button" value="7" class="keys" onClick="addToDisplay('7')">
-          <input type="button" value="+" class="keys" onClick="addToDisplay('+')">
-        </div>
+        <button data-type="num">1</button>
+        <button data-type="num">2</button>
+        <button data-type="num">3</button>
+        <button data-type="negative">-</button>
 
-        <div class="flexcontainer">
-          <input type="button" value="6" class="keys" onClick="addToDisplay('6')">
-          <input type="button" value="5" class="keys" onClick="addToDisplay('5')">
-          <input type="button" value="4" class="keys" onClick="addToDisplay('4')">
-          <input type="button" value="-" class="keys" onClick="addToDisplay('-')">
-        </div>
+        <button data-type="num">0</button>
+        <button data-type="equal">=</button>
+        <button data-type="clear">C</button>
+        <button data-type="opp">*</button>
 
-        <div class="flexcontainer">
-          <input type="button" value="3" class="keys" onClick="addToDisplay('3')">
-          <input type="button" value="2" class="keys" onClick="addToDisplay('2')">
-          <input type="button" value="1" class="keys" onClick="addToDisplay('1')">
-          <input type="button" value="*" class="keys" onClick="addToDisplay('*')">
-        </div>
-
-        <div class="flexcontainer">
-          <input type="button" value="." class="keys" onClick="addToDisplay('.')">
-          <input type="button" value="0" class="keys" onClick="addToDisplay('0')">
-          <input type="button" value="=" id="equal" class="keys" class="keys" onClick="solution()">
-          <input type="button" value="/" class="keys" onClick="addToDisplay('/')">
-        </div>
-
-      </form>
-
-
-
-
+      </div>
+    </div>
 
     <script src="js/main.js" charset="utf-8"></script>
   </body>
